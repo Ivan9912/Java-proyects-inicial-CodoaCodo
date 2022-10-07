@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class jassvass {
+public class Main {
     public static void main(String[] args) {
 
         /*int numero1,numero2,numero3;
@@ -44,14 +42,14 @@ public class jassvass {
 //------------------------------------------------
 
         for (int i=2; i<=50; i++) {
-            if (i%2 == 0) {
-                System.out.println("Este es un número par y es el número: " + i);
-            }else {
-                System.out.println("Aquí yace un número impar...");
-            }
+        if (i%2 == 0) {
+            System.out.println("Este es un número par y es el número: " + i);
+        }else {
+            System.out.println("Aquí yace un número impar...");
         }
+    }
 //-----------------------------------------------------
 
 
-    }
+}
 }
