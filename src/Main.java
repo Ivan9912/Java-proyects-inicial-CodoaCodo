@@ -52,7 +52,7 @@ public class Main {
     }*/
 //-----------------------------------------------------
 
-    int comprarEntradas, valorEntradaMayores, valorEntradaMenores, cantidadDeMenores, totalEntradaParaMenores, totalEntradaParaMayores, valorTotal;
+    /*int comprarEntradas, valorEntradaMayores, valorEntradaMenores, cantidadDeMenores, totalEntradaParaMenores, totalEntradaParaMayores, valorTotal;
 
     valorEntradaMayores = 700;
     valorEntradaMenores = 500;
@@ -73,37 +73,59 @@ public class Main {
 
     }else {
         System.out.println("ERROR:\nEscribió algún número negativo.\nLa cantidad de entradas para menores es mayor que la cantidad de entradas solicitadas.\nRevise alguno de estos posibles errores. Por favor vuelva a ingresar a realizar su compra. Gracias por su visita.");
-    }
+    }*/
 
 //---------------------------------------------------------------------------
-
-        /*String nameUser, passwordUser, nameLogIn, passwordLogIn;
-        int count = 3;
+        String nameUser, passwordUser, nameLogIn, passwordLogIn, decideContinue;
+        int countUser = 10;
 
         nameLogIn = "user1234";
         passwordLogIn = "1234ñI";
-
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese su nombre de Usuario, por favor.");
-        nameUser = sc.nextLine();
 
-        while (nameUser.equals(nameLogIn)) {
-            System.out.println("Ahora " + nameUser + ", ingrese su contraseña, por favor.");
-            passwordUser = sc.nextLine();
+        while (countUser > 0) {
+            System.out.println("Ingrese su nombre de Usuario, por favor.");
+            nameUser = sc.nextLine();
+            int countPassword = 3;
 
-            if (passwordUser.equals(passwordLogIn)) {
-                System.out.println("Bienvenido " + nameLogIn + "!");
-                break;
-            }else {
-                count--;
-                System.out.println(nameLogIn + " Ingresó mal la contraseña...\nVuelva a Ingresar, por favor.\nLe quedan " + count + "/3");
-                if (count == 0) {
-                    System.out.println(nameLogIn + " Superaste los 3 intentos permitidos para loggear. Vuelva a intentar!");
-                    break;
+            if (!nameUser.equals(nameLogIn)) {
+                countUser--;
+                if (countUser > 5) {
+                    System.out.println(nameUser + " Usuario no existe. Vuelva a intentar.");
+                }else if (countUser <= 5 && countUser != 0) {
+                    System.out.println(nameUser + " Usuario no existe. Vuelva a intentar.\nQuedan " + countUser + "/10 intentos.");
+                } else if (countUser == 0) {
+                    System.out.println(nameUser + " Usuario no existe. Vuelva a ingresar por completo.");
                 }
             }
 
-        }*/
+            while (nameUser.equals(nameLogIn)) {
+
+                System.out.println("Ahora " + nameUser + ", ingrese su contraseña, por favor.");
+                passwordUser = sc.nextLine();
+
+                if (passwordUser.equals(passwordLogIn)) {
+                    System.out.println("Bienvenido " + nameLogIn + "!");
+                    break;
+                } else {
+                    countPassword--;
+                    System.out.println(nameLogIn + " Ingresó mal la contraseña...\nVuelva a Ingresar, por favor.\nLe quedan " + countPassword + "/3");
+                    if (countPassword == 0) {
+                        System.out.println(nameLogIn + " Superaste los 3 intentos permitidos para loggear.\n¿Quiere volver a ingresar? ¿S/N?");
+                        decideContinue = sc.nextLine();
+                        if (decideContinue.equals("S")|| decideContinue.equals("s")){
+                            break;
+                        }else {
+                            countUser = -1;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+//--------------------------------------------------------------------------------
+
+
 
 
 
